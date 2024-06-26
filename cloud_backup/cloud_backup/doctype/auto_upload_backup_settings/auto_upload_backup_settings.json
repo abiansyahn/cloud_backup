@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-25 17:38:27.779707",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "nas_server",
+  "nas_share",
+  "nas_username",
+  "nas_password",
+  "download_frequency",
+  "last_backup_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "nas_server",
+   "fieldtype": "Data",
+   "label": "NAS Server"
+  },
+  {
+   "fieldname": "nas_share",
+   "fieldtype": "Data",
+   "label": "NAS Share"
+  },
+  {
+   "fieldname": "nas_username",
+   "fieldtype": "Data",
+   "label": "NAS Username"
+  },
+  {
+   "fieldname": "nas_password",
+   "fieldtype": "Password",
+   "label": "NAS Password"
+  },
+  {
+   "fieldname": "download_frequency",
+   "fieldtype": "Select",
+   "label": "Download Frequency",
+   "options": "1 Day\n1 Hour\n2 Hour\n4 Hour\n6 Hour\n8 Hour\n12 Hour\n1 Week\n1 Month"
+  },
+  {
+   "fieldname": "last_backup_time",
+   "fieldtype": "Datetime",
+   "label": "Last Backup Time",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-06-25 17:52:06.763981",
+ "modified_by": "Administrator",
+ "module": "Cloud Backup",
+ "name": "Auto Upload Backup Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
