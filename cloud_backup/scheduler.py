@@ -1,5 +1,6 @@
 import frappe
 import os
+import uuid
 from frappe.utils.backups import BackupGenerator
 from frappe import _
 from datetime import datetime, timedelta
@@ -116,7 +117,25 @@ def schedule_backup():
 
     # Schedule the next check in one hour
     next_check_time = datetime.now() + timedelta(hours=1)
-    frappe.enqueue('cloud_backup.scheduler.schedule_backup', enqueue_after_commit=True, execute_after=next_check_time)
+    frappe.enqueue('cloud_backup.scheduler.schedule_backup', enqueue_after_commit=True)
+
+def check_connection():
+    settings = frappe.get_single('Auto Upload Backup Settings')
+    nas_server = settings.nas_server
+    nas_share = settings.nas_share
+    nas_username = settings.nas_username
+    nas_password = settings.nas_password
+
+    try:
+        conn = Connection(uuid.uuid4(), nas_server)  # 30 seconds timeout
+        conn.connect()
+        session = Session(conn, nas_username, nas_password)
+        session.connect()
+        tree = TreeConnect(session, f"\\\\{nas_server}\\{nas_share}")
+        tree.connect()
+        print("Connection successful")
+    except Exception as e:
+        print(f"Connection failed: {e}")
 
 if __name__ == "__main__":
     schedule_backup()

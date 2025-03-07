@@ -9,7 +9,7 @@
   "nas_share",
   "nas_username",
   "nas_password",
-  "download_frequency",
+  "download_time",
   "last_backup_time"
  ],
  "fields": [
@@ -34,22 +34,22 @@
    "label": "NAS Password"
   },
   {
-   "fieldname": "download_frequency",
-   "fieldtype": "Select",
-   "label": "Download Frequency",
-   "options": "1 Day\n1 Hour\n2 Hour\n4 Hour\n6 Hour\n8 Hour\n12 Hour\n1 Week\n1 Month"
-  },
-  {
    "fieldname": "last_backup_time",
    "fieldtype": "Datetime",
    "label": "Last Backup Time",
    "read_only": 1
+  },
+  {
+   "fieldname": "download_time",
+   "fieldtype": "Select",
+   "label": "Download Frequency",
+   "options": "1 Day\n1 Hour\n2 Hour\n4 Hour\n6 Hour\n8 Hour\n12 Hour\n1 Week\n1 Month"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-06-25 17:52:06.763981",
+ "modified": "2024-06-26 14:35:35.552010",
  "modified_by": "Administrator",
  "module": "Cloud Backup",
  "name": "Auto Upload Backup Settings",

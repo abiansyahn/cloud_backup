@@ -32,15 +32,15 @@ def upload_backup():
         return {
             'backup': {
                 'filename': os.path.basename(backup.backup_path_db),
-                'content': backup_content.decode('latin1')
+                # 'content': backup_content.decode('latin1')
             },
             'public_files': {
                 'filename': os.path.basename(backup.backup_path_files),
-                'content': public_files_content.decode('latin1')
+                # 'content': public_files_content.decode('latin1')
             },
             'private_files': {
                 'filename': os.path.basename(backup.backup_path_private_files),
-                'content': private_files_content.decode('latin1')
+                # 'content': private_files_content.decode('latin1')
             }
         }
     else:
